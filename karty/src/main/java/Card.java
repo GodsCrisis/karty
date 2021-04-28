@@ -3,8 +3,8 @@ public class Card {
     private String type;
     private String manaCost;
     private String colors;
-    private int toughness;
-    private int power;
+    private int toughness=0;
+    private int power=0;
     private String imgLink;
     public Card(String name, String type, String manaCost, String colors, String imgLink, int toughness, int power){
         this.name=name;
@@ -81,14 +81,14 @@ public class Card {
 
     @Override
     public String toString() {
-        return "Card{" +
-                "name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                ", manaCost='" + manaCost + '\'' +
-                ", colors='" + colors + '\'' +
-                ", toughness=" + toughness +
-                ", power=" + power +
-                ", imgLink='" + imgLink + '\'' +
+        return "{" +
+                "\"name\":\"" + name + '\"' +
+                ",\"type\":\"" + type + '\"' +
+                ",\"manaCost\":\"" + manaCost + '\"' +
+                ",\"colors\":\"" + colors + '\"' +
+                ",\"toughness\":" + toughness +
+                ",\"power\":" + power +
+                ",\"imgLink\":\"" + imgLink + '\"' +
                 '}';
     }
 }
