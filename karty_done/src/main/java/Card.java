@@ -11,8 +11,18 @@ public class Card {
         this.type=type;
         this.manaCost=manaCost;
         this.colors=colors;
-        this.toughness=toughness;
-        this.power=power;
+        if(toughness.equals("*")){
+            this.toughness="\"*\"";
+        }
+        else{
+            this.toughness=toughness;
+        }
+        if(power.equals("*")){
+            this.power="\"*\"";
+        }
+        else{
+            this.power=power;
+        }
         this.imgLink=imgLink;
     }
     public Card(String name, String type, String manaCost, String colors, String imgLink){
@@ -41,7 +51,7 @@ public class Card {
     }
 
     public String getManaCost() {
-        return "\"manaCost\":\"" + manaCost + "\"}";
+        return "\"manaCost\":\"" + manaCost + '\"'+"}";
     }
 
     public void setManaCost(String manaCost) {
@@ -86,7 +96,7 @@ public class Card {
                 "\"name\":\"" + name + '\"' +
                 ",\"type\":\"" + type + '\"' +
                 ",\"manaCost\":\"" + manaCost + '\"' +
-                ",\"colors\":\"" + colors + '\"' +
+                ",\"colors\":" + colors +
                 ",\"toughness\":" + toughness +
                 ",\"power\":" + power +
                 ",\"imgLink\":\"" + imgLink + '\"' +

@@ -31,6 +31,7 @@ public class CardService {
             Save save2 = new Save();
             if (save) {
                 save2.ask();
+                save2.creat();
             }
             for (Object o : karty) {
                 JSONObject newObject = (JSONObject) o;
@@ -208,6 +209,9 @@ public class CardService {
                     }
 
                 }
+            }
+            if(save){
+                save2.end();
             }
         } catch (IOException | ParseException e) {
             e.printStackTrace();
